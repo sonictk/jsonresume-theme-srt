@@ -19,14 +19,17 @@
 		<div id="hd">
 			<div class="yui-gc">
 				<div class="yui-u first">
+					{{#if resume.basics.picture}}
+					<div id class="avatar"><img src="http://www.sonictk.com/files/letterhead.png" /></div>
+					{{/if}}
 					<h1>{{resume.basics.name}}</h1>
-					<h2>{{resume.basics.label}}</h2>
+					<h2 class="sans-serif">{{resume.basics.label}}</h2>
 				</div>
 
 				<div class="yui-u">
 					<div class="contact-info">
-						<h3><a id="pdf" href="#">Download as PDF</a></h3>
 						<h3><a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a></h3>
+						<h3><a href="mailto:{{resume.basics.website}}">{{resume.basics.website}}</a></h3>
 						<h3>{{resume.basics.phone}}</h3>
 					</div><!--// .contact-info -->
 				</div>
@@ -95,11 +98,30 @@
 								{{/if}}</h4>
 								<p>{{summary}}<br>
 							        {{#each highlights}}
-								&bull; {{.}}<br>
+								&nbsp; &nbsp; &bull; {{.}}<br>
 							        {{/each}}</p>
 							</div>
 							{{/each}}
 						</div><!--// .yui-u -->
+					</div><!--// .yui-gf -->
+					{{/if}}
+
+					{{#if resume.awards}}
+					<div class="yui-gf last border-bottom">
+						<div class="yui-u first">
+							<h2>Recognition</h2>
+						</div>
+						{{#each resume.awards}}
+						<div class="yui-u">
+							<h2>{{title}}</h2>
+							<h3 class="awarder"><i>{{awarder}}</i></h3>
+							<p>{{summary}}</p>
+							{{#if url}}
+							<p><a href="{{url}}">{{url}}</a></p>
+							{{/if}}
+							<br>
+						</div>
+						{{/each}}
 					</div><!--// .yui-gf -->
 					{{/if}}
 
@@ -146,9 +168,8 @@
 				</div><!--// .yui-b -->
 			</div><!--// yui-main -->
 		</div><!--// bd -->
-
 		<div id="ft">
-			<p>{{resume.basics.name}} &mdash; <a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a> &mdash; {{resume.basics.phone}}</p>
+			<p><a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a> &mdash; {{resume.basics.phone}} &mdash; <a href="{{resume.basics.website}}">{{resume.basics.website}}</a></p>
 		</div><!--// footer -->
 	</div><!-- // inner -->
 </div><!--// doc -->
