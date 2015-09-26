@@ -18,7 +18,7 @@
 	<div id="inner">
 		<div id="hd">
 			<div class="yui-gc">
-				<div class="yui-u first">
+				<div class="yui-u first title">
 					{{#if resume.basics.picture}}
 					<div id class="avatar"><img src="http://www.sonictk.com/files/letterhead.png" /></div>
 					{{/if}}
@@ -29,7 +29,7 @@
 				<div class="yui-u">
 					<div class="contact-info">
 						<h3><a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a></h3>
-						<h3><a href="mailto:{{resume.basics.website}}">{{resume.basics.website}}</a></h3>
+						<h3><a href="{{resume.basics.website}}">{{resume.basics.website}}</a></h3>
 						<h3>{{resume.basics.phone}}</h3>
 					</div><!--// .contact-info -->
 				</div>
@@ -81,7 +81,7 @@
 							<h2>Experience</h2>
 						</div><!--// .yui-u -->
 
-						<div class="yui-u">
+						<div class="yui-u jobs">
 							{{#each resume.work}}
 							{{#if @last}}
 							<div class="job last">
@@ -112,10 +112,10 @@
 							<h2>Recognition</h2>
 						</div>
 						{{#each resume.awards}}
-						<div class="yui-u">
+						<div class="yui-u awards">
 							<h2>{{title}}</h2>
-							<h3 class="awarder"><i>{{awarder}}</i></h3>
-							<p>{{summary}}</p>
+							<h3 class="awarder">{{awarder}}</h3>
+							<p class="award_summary">{{summary}}</p>
 							{{#if url}}
 							<p><a href="{{url}}">{{url}}</a></p>
 							{{/if}}
@@ -151,16 +151,19 @@
 						</div>
 						{{#each resume.education}}
 						<div class="yui-u">
-							<h2>{{institution}}</h2>
-							<h3>{{area}}, {{studyType}}
-                                                        {{#if gpa}}
-                                                        &mdash; <strong>{{gpa}}</strong>
-                                                        {{/if}}
-                                                        </h3>
-							{{#each courses}}
-							<h4>&bull; {{.}}</h4>
-							{{/each}}
-							<br>
+							<div class="education">
+								<h2>{{institution}}</h2>
+								<h3>{{area}}, {{studyType}}
+	                                                        {{#if gpa}}
+	                                                        &mdash; <strong>{{gpa}}</strong>
+	                                                        {{/if}}
+	                                                        </h3>
+	                            <h4>{{startDate}} - {{#if endDate}}{{endDate}}{{^}}Present{{/if}}</h4>
+								{{#each courses}}
+								<h4>&bull; {{.}}</h4>
+								{{/each}}
+								<br>
+							</div>
 						</div>
 						{{/each}}
 					</div><!--// .yui-gf -->

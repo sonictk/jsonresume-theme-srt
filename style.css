@@ -20,7 +20,7 @@
 .msg a:hover { background: #266400; }
 
 /* //-- yui-grids style overrides -- */
-body { font-family: Georgia; color: #444; }
+body { font-family: Georgia; color: #444; font-size: 14px; }
 #inner { padding: 10px 80px; margin: 80px auto; background: white; border: solid #bbb; border-width: 8px 0 0px 0; }
 .yui-gf { margin-bottom: 1.5em; padding-bottom: 1.5em; border-bottom: 1px solid #ccc; }
 
@@ -29,15 +29,16 @@ body { font-family: Georgia; color: #444; }
 #hd h2 { text-transform: uppercase; letter-spacing: 2px; }
 
 /* //-- footer -- */
-#ft { padding: 1em 0 5em 0; font-size: 92%; border-top: 1px solid #ccc; text-align: center; }
+#ft { padding: 1em 0 5em 0; font-size: .9em; border-top: 1px solid #ccc; text-align: center; }
 #ft p { margin-bottom: 0; text-align: center;   }
 
 /* //-- core typography and style -- */
-#hd h1 { font-size: 48px; text-transform: uppercase; letter-spacing: 3px; }
-h2 { font-size: 152% }
-h3, h4 { font-size: 122%; }
-h1, h2, h3, h4 { color: #333; }
-p { font-size: 100%; line-height: 18px; padding-right: 3em; }
+#hd h1 { font-size: 3.4em; text-transform: uppercase; letter-spacing: 3px; }
+h2 { font-size: 1.5em; }
+h3, h4 { font-size: 1.2em; }
+h1, h2, h3 { color: #333; }
+h4 { color: #777; font-family: Century Gothic; }
+p { font-size: 1em; line-height: 1.5em; padding-right: 3em; }
 a { 
     color: #990003; 
     /* color: #993366; */
@@ -47,21 +48,32 @@ a {
 }
 a:hover { text-decoration: none; }
 strong { font-weight: bold; }
-li { line-height: 24px; border-bottom: 1px solid #ccc; }
-p.enlarge { font-size: 140%; padding-right: 6.5em; line-height: 24px; }
+li { line-height: 1.75em; border-bottom: 1px solid #ccc; }
+p.enlarge { font-size: 1.4em; padding-right: 6.5em; line-height: 1.75em; }
 p.enlarge span { color: #000 }
 .contact-info { margin-top: 7px; }
+.contact-info h3 { font-family: Century Gothic; }
 .first h2 { font-style: italic; }
 .last { border-bottom: 0 }
 
 
 /* //-- section styles -- */
 
+.title h2 {
+    font-size: 1.35em;
+}
+
 a#pdf { display: block; float: left; background: #666; color: white; padding: 6px 50px 6px 12px; margin-bottom: 6px; text-decoration: none;  }
 a#pdf:hover { background: #222; }
 
 .job { position: relative; margin-bottom: 1em; padding-bottom: 1em; border-bottom: 1px solid #ccc; }
-.job h4 { position: absolute; top: 0.35em; right: 0 }
+.job h4 { 
+    position: absolute; 
+    top: 0.35em; 
+    right: 0; 
+    font-family: Century Gothic;
+    font-size: 1em; 
+}
 .job p { 
     margin: 0.75em 0 3em 0; 
 }
@@ -75,9 +87,16 @@ a#pdf:hover { background: #222; }
 .skills-list {  }
 .skills-list ul { margin: 0; }
 .skills-list li { margin: 3px 0; padding: 3px 0; }
-.skills-list li span { font-size: 152%; display: block; margin-bottom: -2px; padding: 0 }
+.skills-list li span { font-size: 1.5em; display: block; margin-bottom: -2px; padding: 0 }
 .talent { width: 32%; float: left; margin-bottom: 12px; }
 .talent h2 { margin-bottom: 6px; }
+
+.talent p { font-family: Century Gothic; }
+
+.education { position: relative; }
+.education h3 { color: #666; }
+.education h4 { position: absolute; top: 0.35em; right: 0; font-size: 1em; }
+
 
 #srt-ttab { margin-bottom: 100px; text-align: center;  }
 #srt-ttab img.last { margin-top: 20px }
@@ -97,18 +116,21 @@ a#pdf:hover { background: #222; }
 }
 
 .talent p {
-    font-size: 90%;
+    font-size: .9em;
 } 
 
 .yui-u h2.sans-serif {
-    font-family: Tahoma, Geneva, sans-serif;
+    font-family: Century Gothic;
     font-style: normal;
 }
 
 .yui-u h3.awarder {
-    font-size: 90%;
-    line-height: 2em;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #666;
 }
+
+.award_summary { font-style: italic; }
 
 div .avatar {
     display: block;
@@ -121,3 +143,7 @@ div .avatar {
     filter: alpha(opacity=40); /* For IE8 and earlier */
 
 }
+
+.jobs div { page-break-inside: avoid; }
+
+#ft p { font-family: Century Gothic; }
